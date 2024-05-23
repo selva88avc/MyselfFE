@@ -1,0 +1,22 @@
+.navbar
+{
+    background: orangered !important;
+}
+
+.carousel-item img
+{
+    height: 300px;
+}
+
+.clscontainer
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.row div img
+{
+    width: 200px;
+    height: 200px;
+}

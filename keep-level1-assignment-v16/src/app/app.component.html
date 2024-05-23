@@ -1,0 +1,22 @@
+
+<app-header></app-header>
+
+<label class="error-message">{{ errMessage }}</label>
+<section>
+
+  
+    <div style="display: block; padding-bottom: 10px;">
+    <input type="text" style="display: block;" name="note.title" [(ngModel)]="note.title" >Title
+    <textarea style="display: block;" name="note.text" [(ngModel)]="note.text"></textarea>Text
+    <button style="display: block;" (click)="saveNote()">Done</button>
+  </div>
+  
+</section>
+<section>
+  <mat-card *ngFor="let note of notes" style="width: 18rem;margin-bottom:10px;background-color: rgb(178, 178, 211);">
+    <mat-card-title><p class="card-text">{{note.title}}</p></mat-card-title>
+    <mat-card-content>
+      <p class="card-text">{{note.text}}</p>
+    </mat-card-content>
+  </mat-card>
+</section>

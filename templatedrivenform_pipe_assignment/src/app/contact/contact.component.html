@@ -1,0 +1,75 @@
+<div class="container-search">
+    <nav class="card-search">
+      <div class="container-search">
+        <h1>Contacts List App</h1>
+      </div>
+    </nav>
+<!-- Use twoway binding with searchText for search -->
+    <div id="searchContainer">
+      <input  id="searchText-id" [(ngModel)]="searchText"/>
+    </div>
+    <br>
+    <div class="left">
+      <table>
+          <caption>Contacts list</caption>
+        <tr>
+          <th id="th-id">Name</th>
+          <th id="th-id"> Mobile</th>
+        </tr>
+  
+        <!-- Implement ngFor on conatacts to diplay contacts and 
+          add search pipe based on searchText-->
+        <tr *ngFor="let contact of contacts | search: searchText">
+          <td>{{contact.name}} </td>
+          <td> {{contact.mobile}}</td>
+        </tr>
+      </table>
+    </div>
+  
+  
+    <div class="right">
+      <section id="person">
+        <div class="card card-container" >
+         
+          
+<!-- template driven form
+create a template driven form with name to be "form" and add event for submit button . 
+1) You need to keep textbox with name to be "name" and bind with contact object
+2) name should not be null, if it is null then "Name is required" message to be displayed in a div
+3) You need to keep textbox with name to be "mobile" and bind with contact object
+4) Mobile should not be null, if it is null then "Mobile is required" message to be displayed in  a div
+5) keep a button with class name "btn" and which adds the contact
+    
+    Need to implement form level validation. Once we submit then the validation error messages to be displayed
+         -->
+
+
+          <form name="contactform" #cform="ngForm" (ngSubmit)="onSubmit()">
+            <div class="container">
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" required
+              [(ngModel)]="form.name" name="name" #name="ngModel"/>
+              <div class="alert-danger"  *ngIf="name.touched">
+                <div *ngIf="name.errors?.['required']">Name is required</div>
+         
+            </div>  
+                 <!-- code for including textbox for name and display error in div -->
+                 
+              <label for="mobile"> mobile</label>
+                  <input type="text"class="form-control" id="mobile" required
+                  [(ngModel)]="form.mobile" name="mobile" #mobile="ngModel"/>
+                 <!-- code for including textbox for mobile and display error in div -->
+                 <div class="alert-danger alert-danger-mobile"  *ngIf="mobile.touched">
+                  <div *ngIf="mobile.errors?.['required']">Mobile is required</div>
+              </div>
+
+              <button class="btn">Add to contacts</button>
+                <!-- write logic to display "message", if form is submitted and contacted is added -->
+                <div class="alert alert-danger" role="alert" *ngIf="message">
+                   {{message}}
+                </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>

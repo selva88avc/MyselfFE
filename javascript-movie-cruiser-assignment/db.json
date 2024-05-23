@@ -1,0 +1,36 @@
+{
+  "movies": [
+    {
+      "id": "14",
+      "title": "Kakki",
+      "posterPath": "poster path"
+    },
+    {
+      "id": "15",
+      "title": "Pokiri",
+      "posterPath": "poster path"
+    }
+  ],
+  "favourites": [
+    {
+      "id": "13",
+      "title": "Dhool",
+      "posterPath": "poster path"
+    },
+    {
+      "id": "12",
+      "title": "Jodi",
+      "posterPath": "poster path"
+    },
+    {
+      "id": "14",
+      "title": "Kakki",
+      "posterPath": "poster path"
+    },
+    {
+      "id": "15",
+      "title": "Pokiri",
+      "posterPath": "poster path"
+    }
+  ]
+}

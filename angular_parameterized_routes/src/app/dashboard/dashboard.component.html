@@ -1,0 +1,7 @@
+<p>dashboard works!</p>
+<div *ngFor="let user of users">
+    <p>{{user.id}}</p>
+  <p>{{user.name}}</p>
+  
+  <a routerLink="../user/{{user.id}}">show User</a>
+</div>
